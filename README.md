@@ -165,7 +165,7 @@ http://localhost:8000
 
 ## 🎥 Project Presentation Video
 
-
+https://drive.google.com/file/d/1zjLTbalAfGNnpW8E1QGTWL0TR5hJmEpQ/view?usp=sharing
 ---
 
 ## 🎯 Project Modules
@@ -189,8 +189,6 @@ http://localhost:8000
 ## 👩‍💻 Developed By
 
 Dhara Parekh
-
-Final Year Project / Submission Project
 
 Wedding Event Management System
 
