@@ -1,0 +1,44 @@
+<%- include("../../layouts/admin-header") %>
+
+<div class="card shadow p-4">
+
+
+<h2 class="mb-4">Edit Wedding Event</h2>
+
+<form action="/admin/events/update/<%= event._id %>"
+      method="POST">
+
+    <input type="text"
+           name="title"
+           value="<%= event.title %>"
+           class="form-control mb-3">
+
+    <input type="date"
+           name="date"
+           value="<%= event.date %>"
+           class="form-control mb-3">
+
+    <input type="text"
+           name="time"
+           value="<%= event.time %>"
+           class="form-control mb-3">
+
+    <input type="text"
+           name="location"
+           value="<%= event.location %>"
+           class="form-control mb-3">
+
+    <textarea name="description"
+              rows="5"
+              class="form-control mb-3"><%= event.description %></textarea>
+
+    <button class="btn btn-primary">
+        Update Event
+    </button>
+
+</form>
+
+
+</div>
+
+<%- include("../../layouts/admin-footer") %>

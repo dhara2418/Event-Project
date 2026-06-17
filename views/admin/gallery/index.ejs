@@ -1,0 +1,60 @@
+<%- include("../../layouts/admin-header") %>
+
+<h1 class="mb-4">
+
+    Gallery Management
+
+</h1>
+
+<a href="/admin/gallery/add"
+   class="btn btn-success mb-4">
+
+    Add Image
+
+</a>
+
+<div class="row">
+
+<% gallery.forEach(item => { %>
+
+<div class="col-md-4 mb-4">
+
+    <div class="card shadow">
+
+        <img src="/uploads/gallery/<%= item.image %>"
+             class="card-img-top"
+             style="height:250px;object-fit:cover;">
+
+        <div class="card-body text-center">
+
+            <h5>
+
+                <%= item.title %>
+
+            </h5>
+
+            <a href="/admin/gallery/edit/<%= item._id %>"
+               class="btn btn-warning">
+
+                Edit
+
+            </a>
+
+            <a href="/admin/gallery/delete/<%= item._id %>"
+               class="btn btn-danger">
+
+                Delete
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+<% }) %>
+
+</div>
+
+<%- include("../../layouts/admin-footer") %>

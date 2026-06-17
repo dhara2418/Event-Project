@@ -1,0 +1,89 @@
+<%- include("../../layouts/admin-header") %>
+
+<h2 class="mb-4">
+
+
+RSVP Confirmations
+
+
+</h2>
+
+<div class="row">
+
+<% rsvps.forEach(rsvp => { %>
+
+<div class="col-md-6 mb-4">
+
+
+<div class="card shadow border-0">
+
+    <div class="card-body">
+
+        <h4>
+
+            <%= rsvp.name %>
+
+        </h4>
+
+        <hr>
+
+        <p>
+
+            <strong>Email :</strong>
+            <%= rsvp.email %>
+
+        </p>
+
+        <p>
+
+            <strong>Phone :</strong>
+            <%= rsvp.phone %>
+
+        </p>
+
+        <p>
+
+            <strong>Guests :</strong>
+            <%= rsvp.guests %>
+
+        </p>
+
+        <p>
+
+            <strong>Status :</strong>
+
+            <% if(rsvp.attend === 'Yes'){ %>
+
+                <span class="badge bg-success">
+                    Attending
+                </span>
+
+            <% } else { %>
+
+                <span class="badge bg-danger">
+                    Not Attending
+                </span>
+
+            <% } %>
+
+        </p>
+
+        <a href="/admin/rsvp/delete/<%= rsvp._id %>"
+           class="btn btn-danger btn-sm">
+
+            Delete
+
+        </a>
+
+    </div>
+
+</div>
+
+
+</div>
+
+<% }) %>
+
+</div>
+
+<%- include("../../layouts/admin-footer") %>

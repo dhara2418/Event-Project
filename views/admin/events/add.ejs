@@ -1,0 +1,43 @@
+<%- include("../../layouts/admin-header") %>
+
+<div class="card shadow p-4">
+
+
+<h2 class="mb-4">Add Wedding Event</h2>
+
+<form action="/admin/events/store" method="POST">
+
+    <input type="text"
+           name="title"
+           class="form-control mb-3"
+           placeholder="Event Title">
+
+    <input type="date"
+           name="date"
+           class="form-control mb-3">
+
+    <input type="text"
+           name="time"
+           class="form-control mb-3"
+           placeholder="Event Time">
+
+    <input type="text"
+           name="location"
+           class="form-control mb-3"
+           placeholder="Location">
+
+    <textarea name="description"
+              rows="5"
+              class="form-control mb-3"
+              placeholder="Description"></textarea>
+
+    <button class="btn btn-success">
+        Save Event
+    </button>
+
+</form>
+
+
+</div>
+
+<%- include("../../layouts/admin-footer") %>

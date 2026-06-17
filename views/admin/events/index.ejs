@@ -1,0 +1,152 @@
+<%- include("../../layouts/admin-header") %>
+
+<div class="container py-5">
+
+
+<div class="d-flex justify-content-between align-items-center mb-5">
+
+    <h2>Wedding Events</h2>
+
+    <a href="/admin/events/add"
+       class="btn btn-success">
+
+        Add Event
+
+    </a>
+
+</div>
+
+<ul class="timeline">
+
+    <% events.forEach((event,index)=>{ %>
+
+    <li class="<%= index % 2 ? 'timeline-inverted' : '' %>">
+
+        <div class="timeline-badge">
+
+            <i class="bi bi-heart-fill"></i>
+
+        </div>
+
+        <div class="timeline-panel">
+
+            <div class="timeline-heading">
+
+                <h3>
+                    <%= event.title %>
+                </h3>
+
+                <p>
+                    <small>
+                        <%= event.date %>
+                    </small>
+                </p>
+
+            </div>
+
+            <div class="timeline-body">
+
+                <p>
+
+                    <strong>Time :</strong>
+                    <%= event.time %>
+
+                </p>
+
+                <p>
+
+                    <strong>Location :</strong>
+                    <%= event.location %>
+
+                </p>
+
+                <p>
+
+                    <%= event.description %>
+
+                </p>
+
+                <a href="/admin/events/edit/<%= event._id %>"
+                   class="btn btn-warning btn-sm">
+
+                    Edit
+
+                </a>
+
+                <a href="/admin/events/delete/<%= event._id %>"
+                   class="btn btn-danger btn-sm">
+
+                    Delete
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </li>
+
+    <% }) %>
+
+</ul>
+
+
+</div>
+
+<style>
+
+.timeline{
+    list-style:none;
+    padding:20px 0;
+    position:relative;
+}
+
+.timeline:before{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#ddd;
+}
+
+.timeline li{
+    position:relative;
+    margin-bottom:50px;
+}
+
+.timeline-panel{
+    width:45%;
+    background:#fff;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+.timeline li:nth-child(odd) .timeline-panel{
+    margin-left:0;
+}
+
+.timeline li:nth-child(even) .timeline-panel{
+    margin-left:55%;
+}
+
+.timeline-badge{
+    position:absolute;
+    left:50%;
+    top:20px;
+    transform:translateX(-50%);
+    width:50px;
+    height:50px;
+    background:#f14e95;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+</style>
+
+<%- include("../../layouts/admin-footer") %>
